@@ -9,7 +9,7 @@ TODO: [YouTube: logpusher](https://www.youtube.com/watch?v=TODO).
 # Uses
 
 - Push OpenTelemetry compatible logs from any script, pipeline or process
-- [Correlate log entries with OpenTelemetry traces](https://agardnerit.github.io/tracepusher/reference/correlating-logs-to-traces)
+- [Correlate log entries with OpenTelemetry traces](reference/correlating-logs-to-traces.md)
 
 ## Try Logpusher
 See [try logpusher](try.md)
@@ -33,40 +33,40 @@ docker run gardnera/logpusher:v0.1.0 \
 
 # Try In Browser
 
-See [try logpusher in-browser without installation](https://agardnerit.github.io/logpusher/try/).
+See [try logpusher in-browser without installation](try.md).
 
 ## Python3 Usage
 
-See [use logpusher as a Python script](https://agardnerit.github.io/logpusher/usage/python).
+See [use logpusher as a Python script](usage/python.md).
 
 
 ## Docker Usage
 
-See [use logpusher as a docker image](https://agardnerit.github.io/logpusher/usage/python/).
+See [use logpusher as a docker image](usage/docker.md).
 
 ## CI Usage
 
-See [run a CI pipeline step as a docker image with logpusher](https://agardnerit.github.io/logpusher/usage/ci).
+See [run a CI pipeline step as a docker image with logpusher](usage/ci.md).
 
 ## Dry Run Mode
 
-See [dry run mode flag](https://agardnerit.github.io/tracepusher/reference/dry-run-mode/).
+See [dry run mode flag](reference/dry-run-mode.md).
 
 ## Debug Mode
 
-See [debug mode flag](https://agardnerit.github.io/tracepusher/reference/debug-mode/).
+See [debug mode flag](reference/debug-mode.md).
 
 ## Time Shifting
 
-See [time shifting](https://agardnerit.github.io/tracepusher/reference/time-shifting/).
+See [time shifting](reference/time-shift.md).
 
 ## Log Attributes
 
-See [log attribute types](https://agardnerit.github.io/tracepusher/reference/attribute-types/)
+See [log attribute types](reference/attribute-types.md)
 
 ## Spin up OpenTelemetry Collector
 
-See [OpenTelemetry Collector configuration](https://agardnerit.github.io/logpusher/reference/otel-col)
+See [OpenTelemetry Collector configuration](reference/otel-col.md)
 
 # Adopters
 
@@ -76,11 +76,11 @@ Submit a PR and add your details to [ADOPTERS.md](ADOPTERS.md)
 
 # FAQs
 
-See [FAQ](https://agardnerit.github.io/logpusher/faq).
+See [FAQ](faq.md).
 
 # Breaking Changes
 
-See [Breaking changes](https://agardnerit.github.io/logpusher/breaking-changes)
+See [Breaking changes](breaking-changes.md)
 
 # Building
 
