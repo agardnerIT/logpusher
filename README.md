@@ -3,14 +3,7 @@ Push OpenTelemetry log lines easily to a collector.
 
 ![logpusher architecture](./assets/architecture.png)
 
-# OpenTelemetry logpusher
-
-## [> View the tracepusher documentation <](https://agardnerit.github.io/tracepusher)
-
-Generate and push OpenTelemetry Trace data to an endpoint in JSON format.
-
-![architecture](assets/architecture.png)
-
+## [> View the logpusher documentation <](https://agardnerit.github.io/logpusher)
 
 Want to do this with OpenTelemetry traces? Try [tracepusher](http://agardnerit.github.io/tracepusher/). Better still, use them together to correlate logs and traces.
 
@@ -20,7 +13,7 @@ TODO: [YouTube: logpusher tracing a GitLab pipeline](https://www.youtube.com/wat
 # Uses
 
 - Push OpenTelemetry compatible logs from any script, pipeline or process
-- [Correlate log entries with OpenTelemetry traces](https://agardnerit.github.io/tracepusher/reference/correlating-logs-to-traces)
+- [Correlate log entries with OpenTelemetry traces](https://agardnerit.github.io/logpusher/reference/correlating-logs-to-traces)
 
 # Try In Browser
 
