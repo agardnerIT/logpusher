@@ -3,8 +3,6 @@ Push OpenTelemetry log lines easily to a collector.
 
 ![logpusher architecture](./assets/architecture.png)
 
-
-
 # OpenTelemetry logpusher
 
 ## [> View the tracepusher documentation <](https://agardnerit.github.io/tracepusher)
