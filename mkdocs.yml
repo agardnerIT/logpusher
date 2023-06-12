@@ -1,0 +1,12 @@
+site_name: OpenTelemetry logpusher
+nav:
+    - Home: index.md
+    - Try logpusher: try.md
+    - Usage: usage/index.md
+    - Usage > Python: usage/python.md
+    - Usage > Docker: usage/docker.md
+    - Usage > CI: usage/ci.md
+    - Reference Pages: reference/index.md
+    - FAQ: faq.md
+    - Adopters: adopters.md
+    - logpusher on GitHub: https://github.com/agardnerit/logpusher

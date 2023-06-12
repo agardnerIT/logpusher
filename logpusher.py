@@ -112,19 +112,20 @@ if DEBUG_MODE:
   print(f"Trace ID: {trace_id}")
   print(f"Span ID: {span_id}")
 
+# if user has not specified a timestamp
 if timestamp == "":
    # get time now
-   time_now = time.time_ns()
+   timestamp = time.time_ns()
 
 if time_shift_duration != "":
    # time_shift_duration is expected to be in seconds
    # convert to nano seconds
    duration = time_shift_duration * 1000000000
-   time_now = time_now - duration
+   timestamp = timestamp - duration
 
 # cast time_now to string
 # This is required by spec
-time_now = str(time_now)
+timestamp = str(timestamp)
 
 log = {
 	"resourceLogs": [{
@@ -134,7 +135,7 @@ log = {
 		"scopeLogs": [{
 			"scope": {},
 			"logRecords": [{
-				"timeUnixNano": time_now,
+				"timeUnixNano": timestamp,
 				"body": {
 					"stringValue": log_line
 				},
