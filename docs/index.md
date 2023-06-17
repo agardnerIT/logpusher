@@ -4,7 +4,7 @@ Push OpenTelemetry log lines easily to a collector.
 ![logpusher architecture](./assets/architecture.png)
 
 # Watch: logpusher in Action
-TODO: [YouTube: logpusher](https://www.youtube.com/watch?v=TODO).
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-z6THmR_jvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Uses
 
