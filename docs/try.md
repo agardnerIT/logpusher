@@ -1,11 +1,8 @@
 # Try Logpusher without Installation
 
-> :warning: This page, and the links on it are a work-in-progress. Check back soon!
-
 Try logpusher from your browser, with nothing to install.
 
-- [logpusher with open source software (Jaeger)](https://killercoda.com/agardnerit/scenario/logpusherOSS)
-- [logpusher with Dynatrace](https://killercoda.com/agardnerit/scenario/logpusherDT)
+- [logpusher with open source software (Loki & Grafana)](https://killercoda.com/agardnerit/scenario/logpusherOSS)
 
 
 ## Use logpusher
