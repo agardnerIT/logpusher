@@ -8,7 +8,7 @@
 - [Debug Mode Flag](debug-mode.md)
 - [Dry Run Flag](dry-run-mode.md)
 - [Attributes](attribute-types.md)
-- [Time Shifting](time-shifting.md)
+- [Time Shifting](time-shift.md)
 - [Timestamp](timestamp.md)
 - [Trace ID](trace-id.md)
 - [Span ID](span-id.md)
