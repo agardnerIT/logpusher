@@ -22,6 +22,6 @@ docker run gardnera/logpusher:v0.1.0 \
 --debug true|false
 ```
 
-For atttribute types, see [Attribute Types](../reference/attribute-types.md).
+For attribute types, see [Attribute Types](../reference/attribute-types.md).
 
 To correlate log lines to traces, see [correlating logs to traces](../reference/correlating-logs-to-traces.md)
