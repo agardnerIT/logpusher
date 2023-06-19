@@ -3,7 +3,7 @@
 Try logpusher from your browser, with nothing to install.
 
 - [logpusher with open source software (Loki & Grafana)](https://killercoda.com/agardnerit/scenario/logpusherOSS)
-
+- [logpusher with Dynatrace](https://killercoda.com/agardnerit/scenario/logpusherDT)
 
 ## Use logpusher
 
