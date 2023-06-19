@@ -7,5 +7,8 @@
 ### Flags Reference
 - [Debug Mode Flag](debug-mode.md)
 - [Dry Run Flag](dry-run-mode.md)
-- [Span Attribute Types](span-attribute-types.md)
+- [Attributes](attribute-types.md)
 - [Time Shifting](time-shifting.md)
+- [Timestamp](timestamp.md)
+- [Trace ID](trace-id.md)
+- [Span ID](span-id.md)
