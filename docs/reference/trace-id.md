@@ -1,6 +1,6 @@
 ## Trace ID Flag
 
-The optional `-tid` or equivalent long form version: `--trace-id` exists to provide a way to correlate this log line with an OpenTelemetry ID.
+The optional `-tid` or equivalent long form version: `--trace-id` exists to provide a way to correlate this log line with an OpenTelemetry trace ID.
 
 ### Valid OTEL Trace ID Length
 
