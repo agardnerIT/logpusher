@@ -6,6 +6,8 @@ Push OpenTelemetry log lines easily to a collector.
 # Watch: logpusher in Action
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-z6THmR_jvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+Want to do the same thing with OpenTelemetry spans and traces? Try [tracepusher](https://agardnerit.github.io/tracepusher).
+
 # Uses
 
 - Push OpenTelemetry compatible logs from any script, pipeline or process
