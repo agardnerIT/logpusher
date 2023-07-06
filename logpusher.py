@@ -130,7 +130,7 @@ timestamp = str(timestamp)
 log = {
 	"resourceLogs": [{
 		"resource": {
-			"attributes": attributes_list
+			"attributes": []
 		},
 		"scopeLogs": [{
 			"scope": {},
