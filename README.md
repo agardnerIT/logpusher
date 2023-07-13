@@ -66,7 +66,7 @@ See [FAQ](https://agardnerit.github.io/logpusher/faq).
 
 See [Breaking changes](https://agardnerit.github.io/logpusher/breaking-changes)
 
-# Building
+# Building Docker Images
 
 Run all build commands from the root directory:
 
@@ -74,6 +74,19 @@ Run all build commands from the root directory:
 docker buildx build --platform linux/arm64,linux/amd64 --push -t logpusher:dev-ci -f ./docker/ci/Dockerfile .
 docker buildx build --platform linux/arm64,linux/amd64 --push -t logpusher:dev -f ./docker/standard/Dockerfile .
 ```
+
+# Building Standalone Binaries
+
+```
+pip install PyInstaller
+python -m PyInstaller --onefile logpusher.py
+```
+
+Executable binary will be in the `dist` folder.
+
+PyInstaller only builds for the platform that you're on - it doesn't do multi-arch or multi-platform builds.
+
+
 
 ----------------------
 
