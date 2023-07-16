@@ -28,9 +28,10 @@ import argparse
 def get_attributes_list(args):
 
     arg_list = []
+    dropped_attribute_count = 0
 
     if args == None or len(args) < 1:
-        return arg_list
+        return arg_list, dropped_attribute_count
 
     for item in args:
         # How many = are in the item?
@@ -39,7 +40,9 @@ def get_attributes_list(args):
         # 2 = key=value=type (user is explicitly telling us the type. logpusher uses it)
         # >3 = invalid item. logpusher does not support span keys and value containing equals. Ignore.
         number_of_equals = item.count("=")
-        if number_of_equals == 0 or number_of_equals > 2: continue
+        if number_of_equals == 0 or number_of_equals > 2:
+           dropped_attribute_count += 1
+           continue
 
         key = ""
         value = ""
@@ -55,7 +58,7 @@ def get_attributes_list(args):
 
         arg_list.append({"key": key, "value": { type: value}})
     
-    return arg_list
+    return arg_list, dropped_attribute_count
 
 parser = argparse.ArgumentParser()
 
@@ -89,7 +92,7 @@ time_shift_duration = args.time_shift
 dry_run = args.dry_run
 debug_mode = args.debug
 
-attributes_list = get_attributes_list(args.attributes)
+attributes_list, dropped_attribute_count = get_attributes_list(args.attributes)
 
 # Debug mode required?
 DEBUG_MODE = False
@@ -140,7 +143,7 @@ log = {
 					"stringValue": log_line
 				},
 				"attributes": attributes_list,
-				"droppedAttributesCount": 0,
+				"droppedAttributesCount": dropped_attribute_count,
 				"traceId": trace_id,
 				"spanId": span_id
 			}]
