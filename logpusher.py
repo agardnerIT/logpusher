@@ -130,6 +130,12 @@ if time_shift_duration != "":
 # This is required by spec
 timestamp = str(timestamp)
 
+if len(trace_id) != 32:
+  print(f"Warning: Trace ID is too short ({len(trace_id)} characters). Collector will fail to accept it.")
+
+if len(span_id) != 16:
+  print(f"Warning: Span ID is too short ({len(span_id)} characters). Collector will fail to accept it.")
+
 log = {
 	"resourceLogs": [{
 		"resource": {
