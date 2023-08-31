@@ -4,4 +4,4 @@ The optional `-sid` or equivalent long form version: `--span-id` exists to provi
 
 ### Valid OTEL Trace ID Length
 
-A valid OpenTelemetry Trace ID is 32 hexidecimal characters long.
+A valid OpenTelemetry Span ID is 16 hexidecimal characters long.
