@@ -46,7 +46,7 @@ See [time shifting](https://agardnerit.github.io/tracepusher/reference/time-shif
 
 ## Log Attributes
 
-See [log attribute types](https://agardnerit.github.io/tracepusher/reference/attribute-types/)
+See [log attribute types](https://agardnerit.github.io/logpusher/reference/attribute-types/)
 
 ## Spin up OpenTelemetry Collector
 
