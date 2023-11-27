@@ -34,15 +34,15 @@ See [run a CI pipeline step as a docker image with logpusher](https://agardnerit
 
 ## Dry Run Mode
 
-See [dry run mode flag](https://agardnerit.github.io/tracepusher/reference/dry-run-mode/).
+See [dry run mode flag](https://agardnerit.github.io/logpusher/reference/dry-run-mode/).
 
 ## Debug Mode
 
-See [debug mode flag](https://agardnerit.github.io/tracepusher/reference/debug-mode/).
+See [debug mode flag](https://agardnerit.github.io/logpusher/reference/debug-mode/).
 
 ## Time Shifting
 
-See [time shifting](https://agardnerit.github.io/tracepusher/reference/time-shifting/).
+See [time shifting](https://agardnerit.github.io/logpusher/reference/time-shifting/).
 
 ## Log Attributes
 
