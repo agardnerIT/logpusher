@@ -75,6 +75,14 @@ docker buildx build --platform linux/arm64,linux/amd64 --push -t logpusher:dev-c
 docker buildx build --platform linux/arm64,linux/amd64 --push -t logpusher:dev -f ./docker/standard/Dockerfile .
 ```
 
+# Testing
+
+Run the test suite:
+
+```
+pytest
+```
+
 ----------------------
 
 # Contributing
