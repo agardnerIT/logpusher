@@ -23,12 +23,4 @@ Download the relevant binary from the [GitHub releases page](https://github.com/
 --insecure true|false
 ```
 
-For span atttribute types, see [Span Attribute Types](../reference/span-attribute-types.md).
-
-For span events, see [Span events](../reference/span-events.md)
-
-For multi-span traces, see [multi span traces](../reference/multi-span-traces.md)
-
-For duration type, see [duration type](../reference/duration-type.md)
-
-For span kind, see [span kind](../reference/span-kind.md)
+For documentation on all available flags, see the [reference pages](../reference/index.md)
