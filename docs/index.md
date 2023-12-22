@@ -19,7 +19,7 @@ See [try logpusher](try.md)
 ## Quick Start
 
 ```
-docker run gardnera/logpusher:v0.1.0 \
+./logpusher \
   --endpoint http(s)://COLLECTOR-URL:4318 \
   --content "This is my log line"
 ```
