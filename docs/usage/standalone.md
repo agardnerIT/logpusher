@@ -7,9 +7,7 @@ Download the relevant binary from the [GitHub releases page](https://github.com/
 ```
 ./logpusher \
   -ep http(s)://OTEL-COLLECTOR-ENDPOINT:4318 \
-  -c 'this is a log line' \
-  -spn span_name \
-  -dur SPAN_TIME_IN_SECONDS
+  -c 'this is a log line'
 ```
 
 ### Optional Parameters
