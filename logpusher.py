@@ -144,16 +144,16 @@ if time_shift_duration != "":
 # This is required by spec
 timestamp = str(timestamp)
 
-if trace_id is not None and len(trace_id) != 32:
-  print(f"Warning: Trace ID is too short ({len(trace_id)} characters). Collector will fail to accept it.")
-else:
-  if DEBUG_MODE:
-    print("Trace ID is of the correct length (32 characters). Collector will accept it.")
-
-if span_id is not None and len(span_id) != 16:
-  print(f"Warning: Span ID is too short ({len(span_id)} characters). Collector will fail to accept it.")
-else:
-    if DEBUG_MODE:
+if DEBUG_MODE and trace_id is not None:
+    if len(trace_id) != 32:
+        print(f"Warning: Trace ID is too short ({len(trace_id)} characters). Collector will fail to accept it.")
+    else:
+        print("Trace ID is of the correct length (32 characters). Collector will accept it.")
+    
+if DEBUG_MODE and span_id is not None:
+    if len(span_id) != 16:
+        print(f"Warning: Span ID is too short ({len(span_id)} characters). Collector will fail to accept it.")
+    else:
         print("Span ID is of the correct length (16 characters). Collector will accept it.")
 
 log = {
