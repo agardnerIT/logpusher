@@ -66,17 +66,31 @@ def test_check_attributes_output():
     assert output.returncode == 0
     assert "Attributes: [{'key': 'foo', 'value': {'stringValue': 'bar'}}, {'key': 'foo2', 'value': {'stringValue': 'bar2'}}, {'key': 'foo3', 'value': {'intValue': '123'}}]" in output.stdout
 
-def test_trace_id_output():
+def test_without_trace_id():
+    args = "-ep http://otelcollector:4317 -c 'This is a log line' --dry-run true --debug true"
+    output = run_logpusher(args)
+    assert output.returncode == 0
+    assert "Trace ID: None" in output.stdout
+
+def test_trace_id_too_short_output():
     args = "-ep http://otelcollector:4317 -c 'This is a log line' --trace-id abcd1234  --dry-run true --debug true"
     output = run_logpusher(args)
     assert output.returncode == 0
     assert "Trace ID: abcd1234" in output.stdout
+    assert "Warning: Trace ID is too short" in output.stdout
 
-def test_span_id_output():
+def test_without_span_id():
+    args = "-ep http://otelcollector:4317 -c 'This is a log line' --dry-run true --debug true"
+    output = run_logpusher(args)
+    assert output.returncode == 0
+    assert "Span ID: None" in output.stdout
+
+def test_span_id_too_short_output():
     args = "-ep http://otelcollector:4317 -c 'This is a log line' --span-id abcd1234  --dry-run true --debug true"
     output = run_logpusher(args)
     assert output.returncode == 0
     assert "Span ID: abcd1234" in output.stdout
+    assert "Warning: Span ID is too short" in output.stdout
 
 # Broken
 # https://github.com/agardnerIT/logpusher/issues/19
