@@ -181,5 +181,5 @@ if DEBUG_MODE:
    print(f"Collector Endpoint: {endpoint}. Log JSON: {log}")
 
 if not DRY_RUN:
-  resp = requests.post(f"{endpoint}/v1/logs", headers={ "Content-Type": "application/json" }, json=log)
+  resp = requests.post(f"{endpoint}/v1/logs", headers={ "Content-Type": "application/json" }, json=log, timeout=5)
   print(resp)
