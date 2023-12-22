@@ -48,6 +48,10 @@ See [time shifting](https://agardnerit.github.io/logpusher/reference/time-shifti
 
 See [log attribute types](https://agardnerit.github.io/logpusher/reference/attribute-types/)
 
+## Insecure Mode
+
+See [the insecure flag](https://agardnerit.github.io/logpusher/reference/insecure-flag/)
+
 ## Spin up OpenTelemetry Collector
 
 See [OpenTelemetry Collector configuration](https://agardnerit.github.io/logpusher/reference/otel-col)
@@ -66,7 +70,17 @@ See [FAQ](https://agardnerit.github.io/logpusher/faq).
 
 See [Breaking changes](https://agardnerit.github.io/logpusher/breaking-changes)
 
-# Building
+# Building Standalone Binaries
+
+Note: PyInstaller is platform dependent. You must build on whatever platform you wish to run logpusher on.
+
+When logpusher is released, the [build_standalone_binaries.yml workflow](.github/workflows/build_standalone_binaries.yml) completes this step and uploads the resulting binaries to S3 where we (currently manually) attach each generated binary to the release notes.
+
+```
+python -m PyInstaller --onefile logpusher.py
+```
+
+# Building Docker Image
 
 Run all build commands from the root directory:
 
