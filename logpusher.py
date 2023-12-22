@@ -109,6 +109,7 @@ if DEBUG_MODE:
   print(f"Endpoint: {endpoint}")
   print(f"Log Line: {log_line}")
   print(f"Attributes: {attributes_list}")
+  print(f"Timestamp: {timestamp}")
   print(f"Dry Run: {type(dry_run)} = {dry_run}")
   print(f"Debug: {type(debug_mode)} = {debug_mode}")
   print(f"Time Shift Duration (seconds): {time_shift_duration}")

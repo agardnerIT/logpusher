@@ -37,6 +37,12 @@ def test_check_log_line_output():
     assert output.returncode == 0
     assert "Log Line: This is a log line" in output.stdout
 
+def test_check_timestamp_output():
+    args = "-ep http://otelcollector:4317 -c 'This is a log line' --timestamp 1234567890123456789 --dry-run true --debug true"
+    output = run_logpusher(args)
+    assert output.returncode == 0
+    assert "Timestamp: 1234567890123456789" in output.stdout
+
 def test_check_attributes_output():
     args = "-ep http://otelcollector:4317 -c 'This is a log line' --attributes foo=bar foo2=bar2=stringValue foo3=123=intValue --dry-run true --debug true"
     output = run_logpusher(args)
