@@ -6,7 +6,7 @@ Add as many attributes as you like.
 
 ### Formatting Attributes
 
-Tracepusher will accept two possible inputs:
+Logpusher will accept two possible inputs:
 
 - `--attributes foo=bar`
 - `--attributes foo=bar=<TYPE>`
