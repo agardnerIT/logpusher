@@ -14,12 +14,18 @@ Want to do this with OpenTelemetry traces? Try [tracepusher](http://agardnerit.g
 
 - Push OpenTelemetry compatible logs from any script, pipeline or process
 - [Correlate log entries with OpenTelemetry traces](https://agardnerit.github.io/logpusher/reference/correlating-logs-to-traces)
+- Send logs from the past with [time shifting](https://agardnerit.github.io/logpusher/reference/time-shift) and/or [timestamp](https://agardnerit/github.io/logpusher/reference/timestamp)
+- [Add attributes to logs](https://agardnerit.github.io/logpusher/reference/attribute-types)
 
 # Try In Browser
 
 See [try logpusher in-browser without installation](https://agardnerit.github.io/logpusher/try/).
 
-## Python3 Usage
+## Standalone Binary
+
+See [download and use logpusher as a standalone binary](https://agardnerit.github.io/tracepusher/usage/standalone.md)
+
+## Python Usage
 
 See [use logpusher as a Python script](https://agardnerit.github.io/logpusher/usage/python).
 
@@ -113,4 +119,3 @@ Get involved:
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
-
