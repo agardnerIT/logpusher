@@ -20,7 +20,7 @@ Download the relevant binary from the [GitHub releases page](https://github.com/
 --span-id <16 character hex id>
 --dry-run true|false
 --debug true|false
---insecure true| false
+--insecure true|false
 ```
 
 For span atttribute types, see [Span Attribute Types](../reference/span-attribute-types.md).
