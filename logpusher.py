@@ -78,6 +78,7 @@ parser.add_argument('-sid', '--span-id', required=False, default=None)
 parser.add_argument('-tsd', '--time-shift', required=False, default="")
 parser.add_argument('-dr','--dry-run','--dry', required=False, default="False")
 parser.add_argument('-x', '--debug', required=False, default="False")
+parser.add_argument('-insec', '--insecure', required=False, default="False")
 
 
 args = parser.parse_args()
@@ -91,6 +92,12 @@ span_id = args.span_id
 time_shift_duration = args.time_shift
 dry_run = args.dry_run
 debug_mode = args.debug
+allow_insecure = args.insecure
+
+# disable until v0.3.0
+#if endpoint.startswith("http://") and not ALLOW_INSECURE:
+#  print("ERROR: Endpoint is http:// (insecure). You MUST set '--insecure true'. Log line has NOT been sent.")
+#  sys.exit(1)
 
 attributes_list, dropped_attribute_count = get_attributes_list(args.attributes)
 
@@ -105,6 +112,28 @@ if dry_run.lower() == "true":
    print("> Dry run mode is ON. Nothing will actually be sent.")
    DRY_RUN = True
 
+# Prior to v0.3.0
+# This flag will ONLY print a soft WARNING
+# If the flag is False (explicitly or omitted)
+# a warning is given that in v0.3.0 calls to http:// endpoints
+# will FAIL if "--insecure true" is NOT set
+#
+# In other words, prior to v0.3.0 no breaking change
+# v0.3.0 and above, if a user wishes to send to an http:// endpoint
+# --insecure true MUST be set
+#
+# Best practice: Start setting this flag now!
+
+# First convert to boolean
+ALLOW_INSECURE = False
+if allow_insecure.lower() == "true":
+  ALLOW_INSECURE = True
+
+# TODO: Adjust this error message for >=v0.3.0
+# From v0.3.0 make this WARN only appear in DEBUG_MODE
+if not ALLOW_INSECURE:
+  print("WARN: --insecure flag is omitted or is set to false. Prior to v0.3.0 logpusher still works as expected (log is sent). In v0.3.0 and above, you MUST set '--insecure true' if you want to send to an http:// endpoint. See https://github.com/agardnerIT/logpusher/issues/18")
+
 if DEBUG_MODE:
   print(f"Endpoint: {endpoint}")
   print(f"Log Line: {log_line}")
@@ -115,6 +144,7 @@ if DEBUG_MODE:
   print(f"Time Shift Duration (seconds): {time_shift_duration}")
   print(f"Trace ID: {trace_id}")
   print(f"Span ID: {span_id}")
+  print(f"Allow insecure endpoints: {allow_insecure}")
 
 # if user has not specified a timestamp
 if timestamp == "":

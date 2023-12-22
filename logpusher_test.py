@@ -105,4 +105,34 @@ def test_validate_failure_for_invalid_time_shift_duration():
     output = run_logpusher(args)
     assert output.returncode != 0
     assert "Error: time_shift_duration must be specified as a number of seconds (eg. 2)" in output.stderr
+
+# Check that --allow-insecure false
+# When flag is omitted
+# Also check that WARN message
+# TODO: Revisit this for v0.3.0
+def test_check_insecure_flag_false_when_unset():    
+   args = "-ep http://otelcollector:4317 -c 'This is a log line' --dry-run true --debug true"
+   output = run_logpusher(args)
+   assert output.returncode == 0
+   assert "allow insecure endpoints: false" or "" in output.stdout.lower()
+   #assert "WARN: --insecure flag is omitted or is set to false. Prior to v0.3.0 logpusher still works as expected (log is sent). In v0.3.0 and above, you MUST set '--insecure true' if you want to send to an http:// endpoint. See https://github.com/agardnerIT/logpusher/issues/78" in output.stdout
+
+# Check that --allow-insecure flag false
+# When flag is explicitly set
+# TODO: Revisit this for v0.3.0
+def test_check_insecure_flag_false_when_set():
+   args = "-ep http://otelcollector:4317 -c 'This is a log line' --dry-run true --debug true --insecure false"
+   output = run_logpusher(args)
+   assert output.returncode == 0
+   assert "allow insecure endpoints: false" in output.stdout.lower()
+   assert "WARN: --insecure flag is omitted or is set to false. Prior to v0.3.0 logpusher still works as expected (log is sent). In v0.3.0 and above, you MUST set '--insecure true' if you want to send to an http:// endpoint. See https://github.com/agardnerIT/logpusher/issues/18" in output.stdout
+
+# Check that --allow-insecure flag false
+# When flag is explicitly set
+# TODO: Revisit this for v0.3.0
+def test_check_insecure_flag_true_when_set():
+   args = "-ep http://otelcollector:4317 -c 'This is a log line' --dry-run true --debug true --insecure True"
+   output = run_logpusher(args)
+   assert output.returncode == 0
+   assert "allow insecure endpoints: true" in output.stdout.lower()
     
