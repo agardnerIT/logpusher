@@ -12,7 +12,7 @@ Your OpenTelemetry platform of choice needs two pieces of information to tie the
 These are added as additional commands when you use logpusher:
 
 ```
-python logpusher.py \
+./logpusher \
   --endpoint http(s)://OTEL-COLLECTOR-ENDPOINT:4318 \
   --content "This is my log line" \
   --trace-id "TRACE-ID-GOES-HERE" \

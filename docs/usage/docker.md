@@ -20,6 +20,7 @@ docker run gardnera/logpusher:v0.1.0 \
 --span-id <16 character hex id>
 --dry-run true|false
 --debug true|false
+--insecure true| false
 ```
 
 For attribute types, see [Attribute Types](../reference/attribute-types.md).

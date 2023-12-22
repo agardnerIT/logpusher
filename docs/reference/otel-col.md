@@ -59,5 +59,5 @@ otelcol.exe --config config.yaml
 Then run logpusher:
 
 ```
-python logpusher.py --endpoint http://localhost:4318 --content "This is my log line"
+./logpusher.py --endpoint http://localhost:4318 --content "This is my log line"
 ```

@@ -22,12 +22,23 @@ python logpusher.py \
 --span-id <16 character hex id>
 --dry-run true|false
 --debug true|false
+--insecure true| false
 ```
 
-For attribute types, see [Attribute Types](../reference/attribute-types.md).
+For attributes, see [Attributes](../reference/attribute-types.md).
+
+For the timestamp parameter, see [timestamp](../reference/timestamp.md)
+
+For time shifting, see [time shifting](../reference/time-shift.md)
 
 To correlate log lines to traces, see [correlating logs to traces](../reference/correlating-logs-to-traces.md)
 
-For information on span atttributes and span attribute types, see [Span Attribute Types](../reference/span-attribute-types.md).
+For dry run mode, see [dry run mode](../reference/dry-run-mode.md)
+
+For debug mode, see [debug mode](../reference/debug-mode.md)
+
+For the `insecure` flag, see [insecure flag](../reference/insecure-flag.md)
+
+For information on span attributes and span attribute types, see [Span Attribute Types](../reference/span-attribute-types.md).
 
 For multi-span traces, see [multi span traces](../reference/multi-span-traces.md)
