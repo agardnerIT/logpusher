@@ -1,6 +1,10 @@
 name: Build Binaries
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: "logpusher version (eg. 0.8.0)"
 
 jobs:
   win_build_binary:
