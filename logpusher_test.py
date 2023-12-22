@@ -37,11 +37,28 @@ def test_check_log_line_output():
     assert output.returncode == 0
     assert "Log Line: This is a log line" in output.stdout
 
+
 def test_check_timestamp_output():
     args = "-ep http://otelcollector:4317 -c 'This is a log line' --timestamp 1234567890123456789 --dry-run true --debug true"
     output = run_logpusher(args)
     assert output.returncode == 0
     assert "Timestamp: 1234567890123456789" in output.stdout
+
+def test_validate_failure_for_invalid_timestamp_length():
+    args = "-ep http://otelcollector:4317 -c 'This is a log line' --timestamp 1234 --dry-run true --debug true"
+    output = run_logpusher(args)
+    assert output.returncode != 0
+    assert "Timestamp: 1234" in output.stdout # should still be present in debug
+    assert "Error: timestamp must be a 19 digit number. Nanoseconds from unix epoch)" in output.stderr
+
+# timestamp must be a 19 digit int
+# So anything else should fail
+def test_validate_failure_for_invalid_timestamp_format():
+    args = "-ep http://otelcollector:4317 -c 'This is a log line' --timestamp '01/01/2023 10:00:00' --dry-run true --debug true"
+    output = run_logpusher(args)
+    assert output.returncode != 0
+    assert "Timestamp: 01/01/2023 10:00:00" in output.stdout # should still be present in debug
+    assert "Error: timestamp must be a 19 digit number. Nanoseconds from unix epoch)" in output.stderr
 
 def test_check_attributes_output():
     args = "-ep http://otelcollector:4317 -c 'This is a log line' --attributes foo=bar foo2=bar2=stringValue foo3=123=intValue --dry-run true --debug true"
@@ -63,10 +80,15 @@ def test_span_id_output():
 
 # Broken
 # https://github.com/agardnerIT/logpusher/issues/19
-# TODO: Fix and re-enable test
-# def test_check_time_shift_output():
-#     args = "-ep http://otelcollector:4317 -c 'This is a log line' --time-shift 2 --dry-run true --debug true"
-#     output = run_logpusher(args)
-#     assert output.returncode == 0
-#     assert "Time Shift Duration (seconds): 20" in output.stdout
+def test_check_time_shift_output():
+    args = "-ep http://otelcollector:4317 -c 'This is a log line' --time-shift 2 --dry-run true --debug true"
+    output = run_logpusher(args)
+    assert output.returncode == 0
+    assert "Time Shift Duration (seconds): 2" in output.stdout
+
+def test_validate_failure_for_invalid_time_shift_duration():
+    args = "-ep http://otelcollector:4317 -c 'This is a log line' --time-shift 2s --dry-run true --debug true"
+    output = run_logpusher(args)
+    assert output.returncode != 0
+    assert "Error: time_shift_duration must be specified as a number of seconds (eg. 2)" in output.stderr
     

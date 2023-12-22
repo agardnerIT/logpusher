@@ -73,8 +73,8 @@ parser.add_argument('-ep', '--endpoint', required=True)
 parser.add_argument('-c', '--content', required=True)
 parser.add_argument('-attrs', '--attributes', required=False, nargs='*')
 parser.add_argument('-t', '--timestamp', required=False, default="")
-parser.add_argument('-tid', '--trace-id', required=False, default="")
-parser.add_argument('-sid', '--span-id', required=False, default="")
+parser.add_argument('-tid', '--trace-id', required=False, default=None)
+parser.add_argument('-sid', '--span-id', required=False, default=None)
 parser.add_argument('-tsd', '--time-shift', required=False, default="")
 parser.add_argument('-dr','--dry-run','--dry', required=False, default="False")
 parser.add_argument('-x', '--debug', required=False, default="False")
@@ -120,23 +120,36 @@ if DEBUG_MODE:
 if timestamp == "":
    # get time now
    timestamp = time.time_ns()
+else: # validate timestamp
+    if len(timestamp) != 19:
+        sys.exit("Error: timestamp must be a 19 digit number. Nanoseconds from unix epoch)")
+    else: # try to parse from string to int
+        try:
+            timestamp = int(timestamp)
+        except:
+            sys.exit("Error: timestamp must be a 19 digit number. Nanoseconds from unix epoch)")
 
 if time_shift_duration != "":
-   # time_shift_duration is expected to be in seconds
-   # convert to nano seconds
-   duration = time_shift_duration * 1000000000
-   timestamp = timestamp - duration
+    try:
+        time_shift_duration = int(time_shift_duration)
+    except:
+        sys.exit("Error: time_shift_duration must be specified as a number of seconds (eg. 2)")
+
+    # time_shift_duration is expected to be in seconds
+    # convert to nano seconds
+    duration = time_shift_duration * 1000000000
+    timestamp = timestamp - duration
 
 # cast time_now to string
 # This is required by spec
 timestamp = str(timestamp)
 
-if len(trace_id) != 32:
+if trace_id is not None and len(trace_id) != 32:
   print(f"Warning: Trace ID is too short ({len(trace_id)} characters). Collector will fail to accept it.")
 else:
   print("Trace ID is of the correct length (32 characters). Collector will accept it.")
 
-if len(span_id) != 16:
+if span_id is not None and len(span_id) != 16:
   print(f"Warning: Span ID is too short ({len(span_id)} characters). Collector will fail to accept it.")
 else:
   print("Span ID is of the correct length (16 characters). Collector will accept it.")
