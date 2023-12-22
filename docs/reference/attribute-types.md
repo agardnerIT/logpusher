@@ -28,7 +28,7 @@ python logpusher.py \
 docker run gardnera/logpusher:v0.1.0 \
 -ep http(s)://OTEL-COLLECTOR-ENDPOINT:4318 \
 --content "This is my log line" \
--spnattrs foo=bar foo2=bar2=stringValue
+-attrs foo=bar foo2=bar2=stringValue
 ```
 
 ### Valid Types
