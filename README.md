@@ -32,7 +32,7 @@ See [use logpusher as a Python script](https://agardnerit.github.io/logpusher/us
 
 ## Docker Usage
 
-See [use logpusher as a docker image](https://agardnerit.github.io/logpusher/usage/python/).
+See [use logpusher as a docker image](https://agardnerit.github.io/logpusher/usage/docker/).
 
 ## CI Usage
 
