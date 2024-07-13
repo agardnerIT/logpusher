@@ -1,4 +1,21 @@
 # logpusher
+
+> Deprecated (see below)
+
+## Deprecation Notice
+Logpusher is now deprecated becasue there are better solutions. The goal of this tool has always been to enable getting log lines into an Observability system (via the OpenTelemetry collector) in the easiest possible way.
+
+There are now two better ways:
+
+1. If you want to send a one-off log line entry to a backend system: [Use the webhookevent receiver](https://youtu.be/FdY4PY8JEnU)
+1. If you have log files that you need to send to a system: [Use the filelog receiver](https://youtu.be/Jqocv1UYn6Y)
+
+With these two combinations, the requirement for logpusher is effectively zero.
+
+As the original author of this tool, I (@agardnerit) want to thank every contributor to this tool for their time, commitments, ideas and improvements.
+
+----------------------------------------------------------------------------------------------------------------
+
 Push OpenTelemetry log lines easily to a collector.
 
 ![logpusher architecture](./assets/architecture.png)
