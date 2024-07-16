@@ -3,7 +3,7 @@
 > Deprecated (see below)
 
 ## Deprecation Notice
-Logpusher is now deprecated becasue there are better solutions. The goal of this tool has always been to enable getting log lines into an Observability system (via the OpenTelemetry collector) in the easiest possible way.
+Logpusher is now deprecated because there are better solutions. The goal of this tool has always been to enable getting log lines into an Observability system (via the OpenTelemetry collector) in the easiest possible way.
 
 There are now two better ways:
 
